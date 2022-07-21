@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(rgba(214, 225, 218, 0.68),rgba(11, 122, 191, 0)),url("q.webp");
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+      *{
+          margin: 0;
+          padding: 0;
+          font-family:  "sans-serif";
+      }
+      .div1{
+          width: 100%;
+          height: 100vh;
+          background-size: cover;
+      }
+      .div2{
+          width: 85%;
+          margin: auto;
+          padding: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+      .logo{
+          width: 120px;
+          cursor: pointer;
+      }
+      .div2 ul li{
+          list_style: none;
+          display:  inline-block;
+          margin: 0 20px;
+          position: relative;
+      }
+      .div2 ul li a{
+          text-decoration: none;
+          color: #fff;
+          text-transform: uppercase;
+      }
+      .div2 ul li::after{
+          content: '';
+          height: 3px;
+          width: 0;
+          background: #370064;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          transition: 0.5s;
+      }
+      .div2 ul li:hover::after{
+          width: 100%;
+      }
+      .div3{
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+          color: #fff;
+      }
+      .div3 h1{
+          font-size: 70px;
+          margin-top: 80px;
+      }
+      .div3 p{
+          margin: 20px auto;
+          font-weight: 100;
+          line-height: 25px;
+      }
+      button{
+          width: 200px;
+          padding: 15px 0;
+          text-align: center;
+          margin: 20px 10px;
+          border-radius: 25px;
+          font-weight: bold;
+          border:2px solid #009688;
+          background: transparent;
+          color: #fff;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+      }
+      span{
+          background: #009688;
+          height: 100%;
+          width: 0;
+          border-radius: :25px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transition:0.5s;
+          z-index: -1;
+      }
+      button:hover span{
+             width: 100%;
+      }
+      .our-partners{
+          padding: 0 80px;
+          position: relative;
+      }
+
+      .our-partners h3{
+          font-size: 28px;
+          margin: 15px;
+      }
+
+      .our-partners hr{
+          border: none;
+          height: 4px;
+          width: 100px;
+          background-color: orange;
+      }
+      .our-partners-inner{
+         margin-bottom: 20px;
+      }
+
+      .our-partners-inner a{
+          display:inline-block;
+          width: 14%;
+          padding: 15px;
+          margin-right: 25px;
+          border: 1px solid #cacaca;
+          border-radius: 20px;
+          box-shadow: 0 5px 0 #cacaca;
+      }
+
+      .our-partners-inner img{
+          width: 100%;
+      }
+    </style>
+  </head>
+  <body >
+    <div class="div1">
+           <div class="div2">
+                    <img src="C:\Users\HP\Downloads\logo.webp" class="logo" />
+                        <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">SERVICE</a></li>
+                        </ul>
+             </div>
+            <div class="div3">
+                     <h1>FOR DESIGNING BULDINGS</h1>
+                     <p>
+                         Do you dream a beatiful house you contact us we can help you with less
+                             rate,<br />dream house and buildingswith regid and beatiful
+                     </p>
+                <div>
+                     <button type="button"><span></span>book now!</button>
+                     <button type="button"><span></span>learn more!</button>
+               </div>
+            </div>
+      <hr>
+      <footer>
+      <div class="our-partners">
+
+
+            <h3>Our Partners</h3>
+            <hr />
+            <div class="our-partners-inner">
+              <a href="#"><img src="C:\Users\HP\Downloads\p.webp" alt="" /></a>
+              <a href="#"><img src="C:\Users\HP\Downloads\q.webp" alt="" /></a>
+              <a href="#"><img src="C:\Users\HP\Downloads\r..webp" alt="" /></a>
+              <a href="#"><img src="C:\Users\HP\Downloads\s.webp" alt="" /></a>
+            </div>
+        </div>
+    
+       </footer>
+    </div>
+
+  </body>
+</html>
