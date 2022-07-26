@@ -1,0 +1,156 @@
+<!-- <html>
+<head>
+<title> javascript object literals </title>
+</head>
+<body>
+<script type="text/javascript">
+employee={id:700, name:"sam",salary:100000}
+document.write(employee.id+" "+employee.name+"  "+employee.salary);
+</script>
+</body>
+</html> -->
+
+
+<!-- 2.instance of object
+ -->
+
+
+ <!-- <html>
+<head>
+<title> javascript instance obj</title>
+</head>
+<body>
+<script type="text/javascript">
+var emp=new Object();
+emp.id=101;
+emp.name="sam";
+emp.salary=100000;
+document.write(emp.id+" "+emp.name+"  "+emp.salary);
+</script>
+</body>
+</html> -->
+
+<!-- 3.constructor
+ -->
+
+ <!-- <html>
+<head>
+<title> javascript constructor
+</title>
+</head>
+<body>
+<script type="text/javascript">
+function employee(id,name,salary){
+this.id=id;
+this.name= name;
+this.salary=salary;
+
+}
+emp=new employee(702,"ammu",100000)
+document.write(emp.id+" "+emp.name+"  "+emp.salary);
+</script>
+</body>
+</html> -->
+ 
+<!-- js method -->
+<!-- <html>
+<head>
+<title> javascript constructor</title>
+</head>
+<body>
+<p id="demo"></p>
+<script type="text/javascript">
+var person={
+    firstname:"RANIYA",
+    lastname:"POTTAYIL",
+    empid:500,
+    fullname:function(){
+        return this.firstname+"  "+ this.lastname
+    }
+    
+};
+document.getElementById("demo").innerHTML=person.fullname();
+
+</script>
+</body>
+</html> --> 
+
+<!-- getter eg -->
+<!--   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><script type="text/javascript">
+var person={
+        firstname:"RANIYA",
+        lastname:"POTTAYIL",
+        empid:500,
+        get id()
+        {
+        return this.empid
+         }
+};
+document.write(person.id);</script>
+    
+</body>
+</html> -->
+
+<!-- setter -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        var person={
+        firstname:"RANIYA",
+        lastname:"POTTAYIL",
+        empid:00,
+        set id(value)
+          {
+          this.empid=value;
+          }
+        };
+        person.id=198;
+        document.getElementById("demo").innerHTML=person.empid;
+    </script>  
+    
+</body>
+</html>  -->
+
+<!-- js object prototype -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p> 
+    <script type="text/javascript">
+    function person(First,Last,age){
+        this.firstname=First;
+        this.lastname=Last;
+        this.age=age;
+    }
+        person.prototype.nationality="indian";
+        const myfather=new person("john","doc",69);
+        document.getElementById("demo").innerHTML="the nationality of my father is"+myfather.nationality;
+   </script>
+    
+</body>
+</html>

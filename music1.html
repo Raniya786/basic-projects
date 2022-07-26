@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.div1{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://st3.depositphotos.com/10654668/15605/i/450/depositphotos_156050314-stock-photo-headphones-with-red-heart-sign.jpg);
+    background-size: cover;
+    background-position: center; 
+    position: relative;
+}
+.div2{
+    width: 85%;
+    margin:auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.div2 ul li{
+    list-style: none;
+    display:  inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.div2 ul li a{
+    text-decoration: none;
+    color: red;
+    margin-top: 0%;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 20px;
+    display: flex;
+    height: 50px;
+    padding: 5px 3px 5px;
+    text-decoration: none;
+}
+.div2 ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.div2 ul li:hover::after{
+    width: 100%;
+    position: absolute;
+}
+.div3{
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+.left{
+    width: 6%;
+}
+.left h1{
+    font-size: 100px;
+    color: #fff;
+    line-height: 110px;
+    float: left;
+}
+.right{
+    float: right;
+    margin-right: 6%;
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+}
+.right p{
+    font-size: 18px;
+    color:blue;
+    margin-right: 15px;
+    margin-top: 25%;
+    font-weight: bold;
+}
+#icon{
+    width: 80px;
+    cursor: pointer;
+}
+   </style>
+</head>
+<body>
+  <div class="div1">
+      <div class="div2"> 
+        <img src="C:\Users\HP\Downloads\mlogo.jpeg" class="logo">
+           <ul>
+            <li><a href="#">home</a></li>
+             <li><a href="#">service</a></li>
+             <li><a href="#">specification</a></li>
+              <li><a href="#">about</a></li>
+             <li><a href="#">contact</a></li>
+           </ul>      
+      </div>
+   <div class="div3">
+      <div class="left">
+        <h1>MY<br>FAVORITE<BR>SONG</h1>
+      </div>
+      <div class="right">
+        <p> click here to listen </p>
+          <img src="media/play.png" id="icon">
+      </div>
+   </div>
+
+ </div>
+    <audio id="Mysong">
+      <source src="C:\Users\HP\Downloads\music.mp3.mp3" type="audio/mp4">
+    </audio>
+<script>
+  var mysong=document.getElementById("Mysong");
+  var icon=document.getElementById("icon");
+  icon.onclick=function()
+  {
+    if(mysong.paused)
+    {
+      Mysong.play();
+      icon.src="data:image/png;base64,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";"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAACJCAMAAAAv+uv7AAAAYFBMVEX///8AAAAjIyP8/Px2dnYtLS3t7e3q6uri4uLU1NRDQ0Pc3Ny9vb1lZWVQUFD4+PisrKyWlpadnZ2ysrKJiYnHx8d/f38VFRWPj485OTkeHh4NDQ1dXV1WVlZvb29LS0sN1hP7AAAEMUlEQVR4nO1c14LjIAzEBXfHcUndlP//y40vd5uTEBiws9GD5xnIGKSREBAhVqxYsYIDkjKv+u2IvsrL5BMUojTv94UMD8ELh1AW+z5Po1/kkR9rGegg62P+KyyS6qYl8cKtevNSNflNPxloam558z4i240ljSc22/fQSFonGk+0yy9S09kuC4TsFl6jPvTiMSLsF+SRF948RhRLeXXjYyAQ7SJLVM6bkCfu5Xwi2wV4jJjt0fFCRIIgnsUjnVoZWcdD23VdO8SGUPREkfoTyU/6cc+buM+S5hV4oybJ+nhz1nc5eftQ/qUd9FKVdPCPyuqi7fXlSWWnG7Cesr5treu68yJyIMcK42w6FYqymBblgweVnP6oIbPsnw30AM4LRNtI7GL+KakArraSUl5zcp3aHTmKmzNTOnJ0Dx7NkRincBmBmFfpZfZiR+idg9oSseZqa6kY2VUdzDoGlWrfmyePEcRewDIyN3elZzuDiBBqflPYmZzacR4R7xFVSZtLhKJioyqKA88nQlCxcOUe95ljrC8oZjuZ8Tc4cl0XISIEduZwymg71EH66ghGhiWuM7dPcHs/ZaWA0x1p3qhiyzouRkQIHIPMnoAan5bc1DY4Mpsa44CjWxu/LB2vjyH8NKg+og2aweBVjUAhfqOfcSyv2k8PA1l5FPZSNL5eaJH8DNqGo+jcPdwK5bZa0UQuHOql5Cl/N2etyaBuah25srSSf0yCc+u6RMhSKk0ztDiGL/75tLNjwSizWx7YqjZ873+TfHXaNURod0i3Qp5j+lqw3LGL/CHFoj8DqbFpPBSwXeqLsCcZTdDEXRyYPLYg1qYLKwmkCaTQh3VmTTJ5DGnr0dBBJSWe0EzOxo0AVQjY2wWjEpZ6KEOBaePGON1kSUJubcwlgrGN8os9aGHeMWoq1lYBAIrbnmgBc3qzYmlr55fp3R2ceyrHhwZrNkB9Ff88THkRlFmpNkjg6Ob8w3SeMBUAEtA6VH+oBGU1aTY+88mGudrZgMk/qMsJndgUdCaZPOzdMKVIQVXWUHEmii3Tpz2GAACdR1VQaNL6dM2SiSG9hImbalUwSE7syq1OwGqNR8M9lZrgQyYTW0XLszg6AMAN7+8wCQpqWj7BZIk5+aSd8PEdPnrCR2P5xB0+sZhPfsIoZ+OTx/LJ7fnsd/jsAfnsi/nUCnD9xHRY518/QUclGjVGK/+5mhKjOhuf2iOfeiyfGjWjuj2fsww+5zuMzrwYnQPyORvlc17M6Aydz70CRnctGN0/4XMnRzTqZbYP3VPic3eL0X02Rnf8GN17ZHQXlM/9WEZ3hhndo2Z0t5zRfXtGbxAYvcsQfN6qCEbvdxi9aWL0zkvwefs2gst7QMHojaTg8270D5i8pR3B5n3xiKSykd23v7n+Cx7v0J/g8jb/Bwz+r2DFihUrFHwDC/pAxsBzpzYAAAAASUVORK5CYII=";
+    }
+    else
+    {
+      Mysong.pause();
+      icon.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAACJCAMAAAAv+uv7AAAAYFBMVEX///8AAAAjIyP8/Px2dnYtLS3t7e3q6uri4uLU1NRDQ0Pc3Ny9vb1lZWVQUFD4+PisrKyWlpadnZ2ysrKJiYnHx8d/f38VFRWPj485OTkeHh4NDQ1dXV1WVlZvb29LS0sN1hP7AAAEMUlEQVR4nO1c14LjIAzEBXfHcUndlP//y40vd5uTEBiws9GD5xnIGKSREBAhVqxYsYIDkjKv+u2IvsrL5BMUojTv94UMD8ELh1AW+z5Po1/kkR9rGegg62P+KyyS6qYl8cKtevNSNflNPxloam558z4i240ljSc22/fQSFonGk+0yy9S09kuC4TsFl6jPvTiMSLsF+SRF948RhRLeXXjYyAQ7SJLVM6bkCfu5Xwi2wV4jJjt0fFCRIIgnsUjnVoZWcdD23VdO8SGUPREkfoTyU/6cc+buM+S5hV4oybJ+nhz1nc5eftQ/qUd9FKVdPCPyuqi7fXlSWWnG7Cesr5treu68yJyIMcK42w6FYqymBblgweVnP6oIbPsnw30AM4LRNtI7GL+KakArraSUl5zcp3aHTmKmzNTOnJ0Dx7NkRincBmBmFfpZfZiR+idg9oSseZqa6kY2VUdzDoGlWrfmyePEcRewDIyN3elZzuDiBBqflPYmZzacR4R7xFVSZtLhKJioyqKA88nQlCxcOUe95ljrC8oZjuZ8Tc4cl0XISIEduZwymg71EH66ghGhiWuM7dPcHs/ZaWA0x1p3qhiyzouRkQIHIPMnoAan5bc1DY4Mpsa44CjWxu/LB2vjyH8NKg+og2aweBVjUAhfqOfcSyv2k8PA1l5FPZSNL5eaJH8DNqGo+jcPdwK5bZa0UQuHOql5Cl/N2etyaBuah25srSSf0yCc+u6RMhSKk0ztDiGL/75tLNjwSizWx7YqjZ873+TfHXaNURod0i3Qp5j+lqw3LGL/CHFoj8DqbFpPBSwXeqLsCcZTdDEXRyYPLYg1qYLKwmkCaTQh3VmTTJ5DGnr0dBBJSWe0EzOxo0AVQjY2wWjEpZ6KEOBaePGON1kSUJubcwlgrGN8os9aGHeMWoq1lYBAIrbnmgBc3qzYmlr55fp3R2ceyrHhwZrNkB9Ff88THkRlFmpNkjg6Ob8w3SeMBUAEtA6VH+oBGU1aTY+88mGudrZgMk/qMsJndgUdCaZPOzdMKVIQVXWUHEmii3Tpz2GAACdR1VQaNL6dM2SiSG9hImbalUwSE7syq1OwGqNR8M9lZrgQyYTW0XLszg6AMAN7+8wCQpqWj7BZIk5+aSd8PEdPnrCR2P5xB0+sZhPfsIoZ+OTx/LJ7fnsd/jsAfnsi/nUCnD9xHRY518/QUclGjVGK/+5mhKjOhuf2iOfeiyfGjWjuj2fsww+5zuMzrwYnQPyORvlc17M6Aydz70CRnctGN0/4XMnRzTqZbYP3VPic3eL0X02Rnf8GN17ZHQXlM/9WEZ3hhndo2Z0t5zRfXtGbxAYvcsQfN6qCEbvdxi9aWL0zkvwefs2gst7QMHojaTg8270D5i8pR3B5n3xiKSykd23v7n+Cx7v0J/g8jb/Bwz+r2DFihUrFHwDC/pAxsBzpzYAAAAASUVORK5CYII=";
+    }
+  }
+</script>
+    
+</body>
+</html>
